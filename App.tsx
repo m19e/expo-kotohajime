@@ -2,6 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 
+const initialState = {
+    name: "Akiho",
+    age: 16,
+};
+
 export default function App() {
     const showAlert = () => {
         alert("display alert");
