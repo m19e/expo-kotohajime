@@ -20,3 +20,5 @@ const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownPr
         <Button title="Reset" onPress={reset} />
     </Card>
 );
+
+export default CountdownComponent;
