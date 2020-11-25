@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Card, Button, Input } from "react-native-elements";
+import CountdownContainer from "./containers/Countdown";
 
 const initialState = {
     name: "Akiho",
@@ -25,7 +26,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <FormSample />
+            <CountdownContainer />
             <StatusBar style="auto" />
         </View>
     );
