@@ -31,6 +31,8 @@ export default function App() {
     );
 }
 
+const Hello = (props: { [key: string]: string }) => <Text>Hello, {props.to}!</Text>;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
