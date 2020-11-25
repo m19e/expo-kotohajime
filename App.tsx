@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button, TextInput } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Card, Button, Input } from "react-native-elements";
 
 const initialState = {
     name: "Akiho",
@@ -24,10 +25,6 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Text>Hello, {person.name}.</Text>
-            <Button title="Change name" onPress={changePerson} />
-            <Hello to="Akiho" />
-            <Hello to="Akiha" />
             <FormSample />
             <StatusBar style="auto" />
         </View>
@@ -40,10 +37,10 @@ const FormSample = () => {
     const [text, setText] = useState("placeholder");
 
     return (
-        <>
-            <TextInput value={text} onChangeText={(t) => setText(t)} style={{ textAlign: "center" }} />
-            <Button title="Entry" onPress={() => alert(text)} />
-        </>
+        <Card>
+            <Input value={text} label="text" errorMessage="error" onChangeText={(t) => setText(t)} />
+            <Button title="Entry" buttonStyle={{ marginTop: 30, borderRadius: 20 }} onPress={() => alert(text)} />
+        </Card>
     );
 };
 
