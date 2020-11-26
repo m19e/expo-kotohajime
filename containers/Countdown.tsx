@@ -7,7 +7,7 @@ const useCountdown = (limit: number, span: number): any => {
     const [timerObj, setTimerObj]: any = useState("");
     const [active, setActive] = useState(false);
     const [relax, setRelax] = useState(false);
-    const [playing, currentTime, play, pause, jump] = useAudio("https://raw.githack.com/m19e/expo-kotohajime/master/assets/alarm.mp3");
+    const [play, pause] = useAudio("https://raw.githack.com/m19e/expo-kotohajime/master/assets/alarm.mp3");
 
     const setCountdown = () => {
         if (!active) {
