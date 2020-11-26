@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
 import CountdownComponent from "../components/Countdown";
 import useAudio from "../libs/useAudio";
 
@@ -64,7 +65,20 @@ const CountdownContainer = () => {
     const SPAN = 60 * 5;
     const [[leftSec, active], [reset, stop, start]] = useCountdown(TIMER, SPAN);
 
-    return <CountdownComponent leftSec={leftSec} active={active} reset={reset} stop={stop} start={start} />;
+    return (
+        <View style={styles.root}>
+            <CountdownComponent leftSec={leftSec} active={active} reset={reset} stop={stop} start={start} />
+        </View>
+    );
 };
+
+const styles = StyleSheet.create({
+    root: {
+        flex: 1,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+});
 
 export default CountdownContainer;

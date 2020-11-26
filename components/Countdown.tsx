@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import { Button, Card } from "react-native-elements";
+import { StyleSheet, View, Text } from "react-native";
+import { Button } from "react-native-elements";
 import moment from "moment";
 
 interface CountdownProps {
@@ -14,24 +14,27 @@ interface CountdownProps {
 const secToMMSS = (sec: number): string => moment.utc(sec * 1000).format("mm:ss");
 
 const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownProps): any => (
-    <Card>
-        <time style={{ fontSize: "160px" }}>{secToMMSS(leftSec)}</time>
+    <View>
+        <Text style={styles.time}>{secToMMSS(leftSec)}</Text>
         <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", paddingBottom: 30 }}>
             <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} style={styles.button} />
             <Button title="Reset" onPress={reset} style={styles.button} />
         </View>
-    </Card>
+    </View>
 );
 
 const styles = StyleSheet.create({
     button: {
-        width: 100,
-        height: 30,
-        padding: 10,
-        backgroundColor: "lightgray",
+        // width: 100,
+        // height: 30,
+        // backgroundColor: "lightgray",
         alignItems: "center",
         justifyContent: "center",
-        margin: 3,
+        margin: 5,
+        padding: 5,
+    },
+    time: {
+        fontSize: 100,
     },
 });
 
