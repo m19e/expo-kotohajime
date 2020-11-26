@@ -28,9 +28,7 @@ const useCountdown = (limit: number, span: number): any => {
     };
 
     const reset = () => {
-        if (true || window.confirm("Reset Timer?")) {
-            setLeftSec(limit);
-        }
+        setLeftSec(limit);
     };
 
     const stop = () => {
