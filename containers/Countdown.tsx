@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CountdownComponent from "../components/Countdown";
+import useAudio from "../libs/useAudio";
 
 const useCountdown = (limit: number): any => {
     const [leftSec, setLeftSec] = useState(limit);
     const [timerObj, setTimerObj]: any = useState("");
     const [active, setActive] = useState(false);
+    const [playing, currentTime, play, pause, jump] = useAudio("https://raw.githack.com/m19e/expo-kotohajime/master/assets/alarm.mp3");
 
     const setCountdown = () => {
         if (!active) {
@@ -18,7 +20,8 @@ const useCountdown = (limit: number): any => {
 
     const afterTimeup = (left: number) => {
         if (left <= 0) {
-            alert("Finished");
+            // alert("Finished");
+            play();
             setLeftSec(() => limit);
         }
     };
