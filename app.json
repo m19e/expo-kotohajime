@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-kotohajime",
-    "slug": "expo-kotohajime",
+    "name": "react-native-pomodoro",
+    "slug": "react-native-pomodoro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
