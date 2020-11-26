@@ -66,18 +66,18 @@ const CountdownContainer = () => {
     const [[leftSec, active], [reset, stop, start]] = useCountdown(TIMER, SPAN);
 
     return (
-        <View style={styles.root}>
+        <View style={styles.container}>
             <CountdownComponent leftSec={leftSec} active={active} reset={reset} stop={stop} start={start} />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    root: {
+    container: {
         flex: 1,
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        // backgroundColor: "#F5FCFF",
     },
 });
 

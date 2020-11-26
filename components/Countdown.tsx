@@ -17,8 +17,8 @@ const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownPr
     <View>
         <Text style={styles.time}>{secToMMSS(leftSec)}</Text>
         <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", paddingBottom: 30 }}>
-            <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} style={styles.button} />
-            <Button title="Reset" onPress={reset} style={styles.button} />
+            <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} buttonStyle={styles.button} />
+            <Button title="Reset" onPress={reset} buttonStyle={styles.button} />
         </View>
     </View>
 );
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         // backgroundColor: "lightgray",
         alignItems: "center",
         justifyContent: "center",
-        margin: 5,
-        padding: 5,
+        marginHorizontal: 5,
+        paddingHorizontal: 15,
     },
     time: {
         fontSize: 100,
