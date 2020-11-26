@@ -17,8 +17,7 @@ const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownPr
     <Card>
         <time style={{ fontSize: "160px" }}>{secToMMSS(leftSec)}</time>
         <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", paddingBottom: 30 }}>
-            <Button title="Start" onPress={start} disabled={active} style={styles.button} />
-            <Button title="Stop" onPress={stop} disabled={!active} style={styles.button} />
+            <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} style={styles.button} />
             <Button title="Reset" onPress={reset} style={styles.button} />
         </View>
     </Card>
