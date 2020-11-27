@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     button: {
-        width: wp("25%"),
+        width: wp("10%"),
+        minWidth: 100,
         marginHorizontal: wp("2%"),
         marginTop: hp("15%"),
         paddingHorizontal: wp("5%"),
