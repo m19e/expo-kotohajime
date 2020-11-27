@@ -25,13 +25,13 @@ const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownPr
 
 const styles = StyleSheet.create({
     root: {
-        width: 250,
-        height: 300,
+        // width: 250,
+        // height: 300,
     },
     button: {
         // backgroundColor: "lightgray",
-        alignItems: "center",
-        justifyContent: "center",
+        // alignItems: "center",
+        // justifyContent: "center",
         marginHorizontal: 5,
         paddingHorizontal: 15,
     },

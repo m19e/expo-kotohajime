@@ -74,9 +74,13 @@ const CountdownContainer = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "auto",
+        marginBottom: "auto",
+        // flex: 1,
+        // justifyContent: "center",
+        // alignItems: "center",
         // backgroundColor: "#F5FCFF",
     },
 });
