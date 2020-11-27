@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         fontSize: hp("3%"),
     },
     time: {
-        fontSize: hp("15%"),
+        fontSize: hp("20%"),
     },
 });
 
