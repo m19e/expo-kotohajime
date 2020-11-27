@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Button } from "react-native-elements";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from "react-native-responsive-screen";
 import moment from "moment";
 
 interface CountdownProps {
@@ -14,27 +15,36 @@ interface CountdownProps {
 const secToMMSS = (sec: number): string => moment.utc(sec * 1000).format("mm:ss");
 
 const CountdownComponent = ({ leftSec, active, start, reset, stop }: CountdownProps): any => (
-    <View>
+    <View style={styles.root}>
         <Text style={styles.time}>{secToMMSS(leftSec)}</Text>
-        <View style={{ flex: 1, flexDirection: "row", justifyContent: "center", paddingBottom: 30 }}>
-            <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} style={styles.button} />
-            <Button title="Reset" onPress={reset} style={styles.button} />
+        <View style={styles.controls}>
+            <Button title={active ? "Stop" : "Start"} onPress={active ? stop : start} buttonStyle={styles.button} titleStyle={styles.buttonText} />
+            <Button title="Reset" onPress={reset} buttonStyle={styles.button} titleStyle={styles.buttonText} />
         </View>
     </View>
 );
 
 const styles = StyleSheet.create({
-    button: {
-        // width: 100,
-        // height: 30,
-        // backgroundColor: "lightgray",
-        alignItems: "center",
+    root: {
         justifyContent: "center",
-        margin: 5,
-        padding: 5,
+        alignItems: "center",
+    },
+    controls: {
+        flexDirection: "row",
+        justifyContent: "center",
+    },
+    button: {
+        width: wp("10%"),
+        minWidth: 100,
+        marginHorizontal: wp("2%"),
+        marginTop: hp("15%"),
+        paddingHorizontal: wp("5%"),
+    },
+    buttonText: {
+        fontSize: hp("3%"),
     },
     time: {
-        fontSize: 100,
+        fontSize: hp("15%"),
     },
 });
 
